@@ -249,7 +249,7 @@ def scene(kind, box):
 HEROES = [
     ("MIDDLE EAST", "1", "CONFIRMED", RED, "gulf",
      "Iran strikes Bahrain as tanker is hit off Oman",
-     "Bahrain says an Iranian attack set a civilian site ablaze; no one hurt. UKMTO: a tanker was struck off Khasab.",
+     "Bahrain says an Iranian attack set a civilian site ablaze. UKMTO: a tanker was struck off Khasab.",
      "AL JAZEERA · REUTERS · AFP"),
     ("GLOBAL", "2", "CONFIRMED", RED, "cop",
      "COP31 deadlocked over fossil fuels in overtime",
@@ -273,7 +273,7 @@ for i, (reg, num, badge, bc, kind, title, body, src) in enumerate(HEROES):
 SEC = [
     ("PERU · QUAKE", "4", "OFFICIAL", BLUE, "quake", "Deep 6.7 quake shakes Peru", "Jun\u00edn, 108 km deep · USGS"),
     ("GULF OF FINLAND", "5", "CONFIRMED", RED, "ship", "Drones set Russian cargo ship ablaze", "Sparta II, crew taken off · BBC"),
-    ("MERCURY · SCIENCE", "6", "OFFICIAL", BLUE, "mercury", "BepiColombo enters Mercury orbit", "18:24 GMT burn, 8 yrs out · ESA"),
+    ("MERCURY · SCIENCE", "6", "OFFICIAL", BLUE, "mercury", "BepiColombo fires its Mercury orbit burn", "18:24 GMT burn, 8 yrs out · ESA"),
     ("BRUSSELS · TRADE", "7", "OFFICIAL", BLUE, "flags", "EU and Indonesia sign trade pact", "98.5% of tariffs go · EURONEWS"),
     ("CRYPTO", "8", "CONFIRMED", RED, "bitcoin", "Bitcoin dives, then rebounds", "$55,100 low since Sept 2024"),
     ("IRAQ · DISASTER", "9", "CONFIRMED", RED, "fire", "Power-plant fire kills 4 in Basra", "35 hurt, houses ablaze · REUTERS"),
@@ -292,8 +292,8 @@ for i, (reg, num, badge, bc, kind, title, src) in enumerate(SEC):
     bw = d.textlength(badge, font=SANSB(7)) + 8
     d.rectangle([x + 196 - bw, y + 46, x + 196, y + 60], fill=bc)
     d.text((x + 196 - bw + 4, y + 48), badge, font=SANSB(7), fill=(255, 255, 255))
-    para(d, x + 5, y + 62, title, SANSB(10), 186, leading=11)
-    d.text((x + 5, y + 87), src, font=SANS(8), fill=GREY)
+    para(d, x + 5, y + 62, title, SANSB(9), 186, leading=11)
+    d.text((x + 5, y + 88), src, font=SANS(8), fill=GREY)
 
 # ---------- world map (coarse land mask, drawn in code) ----------
 MAP = [
@@ -338,11 +338,17 @@ for r, row in enumerate(MAP):
 PINS = {1: (50.6, 26.2), 2: (30.7, 36.9), 3: (-107.4, 25.0), 4: (-75.0, -11.0),
         5: (24.0, 59.8), 7: (4.4, 50.8), 9: (47.8, 30.5), 10: (12.6, 55.7),
         11: (6.1, 46.2), 12: (125.6, 7.1), 13: (-115.1, 36.1)}
+NUDGE = {1: (-11, 9), 9: (11, -7), 7: (-12, 3), 11: (12, 7), 10: (2, -12), 5: (9, -5)}
 for n, (lon, lat) in PINS.items():
     px = MX + (lon + 180) / 360 * MW
     py = MY + (75 - lat) / 130 * MH
-    d.ellipse([px - 8, py - 8, px + 8, py + 8], fill=RED, outline=(255, 255, 255), width=1)
-    d.text((px - 3, py - 6), str(n), font=SANSB(8), fill=(255, 255, 255))
+    dx, dy = NUDGE.get(n, (0, 0))
+    if (dx, dy) != (0, 0):
+        d.line([px, py, px + dx, py + dy], fill=RED, width=1)
+        d.ellipse([px - 2, py - 2, px + 2, py + 2], fill=RED)
+        px, py = px + dx, py + dy
+    d.ellipse([px - 6, py - 6, px + 6, py + 6], fill=RED, outline=(255, 255, 255), width=1)
+    d.text((px - 3, py - 5), str(n), font=SANSB(7), fill=(255, 255, 255))
 d.text((14, 856), "6 Mercury & 8 Bitcoin: off-map (space / global).",
        font=SANS(8), fill=GREY)
 
@@ -352,7 +358,7 @@ ALSO = [
     (15, "Riyadh: coalition downs 3 Houthi missiles", "AJ"),
     (16, "Gaza City: Israeli strike kills 4, rescuers say", "REUTERS"),
     (17, "Beirut: Aoun demands Israeli pull-out", "AJ"),
-    (18, "Brussels: Costa unveils \u20ac204bn EU budget", "DW"),
+    (18, "Brussels: Costa proposes \u20ac204bn cut to EU budget", "DW"),
     (19, "Bras\u00edlia: Bolsonaro moved to intensive care", "REUTERS"),
     (20, "Washington: FBI probes crime-database breach", "BBC"),
     (21, "Serang, Java: sweet-factory fire, 3 dead, 36 missing", "BBC"),
@@ -393,7 +399,7 @@ para(d, 14, 900,
      "Friday 20 Nov, not shown: Wall Street\u2019s AI rout  ·  Russian missiles landing in Poland  ·  Kyiv\u2019s bridges barrage  ·  Cyclone Akvan\u2019s landfall  ·  US Treasury\u2019s Iran oil-trustee sanctions.",
      SANS(10), 996, leading=13)
 para(d, 14, 926,
-     "Thursday 19 Nov, not shown: the Shenzhen Trump\u2013Xi\u2013Putin summit  ·  the ICJ Myanmar ruling  ·  the Anthropic IPO.  Wednesday 18 Nov: Voyager 1\u2019s light-day.  Not yet: COP31\u2019s closing session (Sunday 22) and BepiColombo\u2019s orbit confirmation.",
+     "Thursday 19 Nov, not shown: the Shenzhen Trump\u2013Xi\u2013Putin summit  ·  the ICJ Myanmar ruling  ·  the Anthropic IPO.  Wednesday 18 Nov: Voyager 1\u2019s light-day.  Not yet: COP31\u2019s closing session (Sunday 22) and BepiColombo\u2019s first Mercury science.",
      SANS(10), 996, leading=13)
 d.text((14, 954), "Every story above happened, or was first reported, on Saturday 21 November 2026.",
        font=SANSB(10), fill=INK)

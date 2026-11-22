@@ -11,7 +11,7 @@ search on 2026-11-22 plus the public top-10 consensus for this contest.
 3. Mexico — 'El Chapo Isidro' captured, 11 dead (Reuters, 21 Nov)
 4. Peru — M6.7 quake, Junín, 108 km deep, 00:09 UTC (USGS)
 5. Gulf of Finland — drones set Russian cargo ship Sparta II ablaze, 06:50 UTC (BBC)
-6. Mercury — BepiColombo orbit burn 18:24 GMT (ESA)
+6. Mercury — BepiColombo fires its orbit burn 18:24 GMT (ESA; first science still to come)
 7. EU–Indonesia trade pact signed, 98.5% of tariffs go (Euronews)
 8. Bitcoin dives to $55,100 low, then rebounds (Coinbase)
 9. Iraq — Hartha power-plant fire, Basra, 4 dead, 35 hurt (Reuters, 21 Nov)
@@ -22,7 +22,7 @@ search on 2026-11-22 plus the public top-10 consensus for this contest.
 
 ## Also (14–37)
 Kyiv (Zelensky bridge comment), Riyadh (3 Houthi missiles downed), Gaza City
-(4 killed), Beirut (Aoun), Brussels (€204bn EU budget), Brasília (Bolsonaro
+(4 killed), Beirut (Aoun), Brussels (Costa proposes €204bn cut to EU budget), Brasília (Bolsonaro
 to ICU), Washington (FBI database-breach probe), Serang Java (factory fire,
 3 dead, 36 missing), Hanoi (land law), Savar (80 garment factories shut),
 Mastung (15 militants killed), Beijing (Wong–Li Qiang, 20+ deals), Qinghai
