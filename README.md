@@ -1,8 +1,8 @@
 # The World in One Day — Saturday 21 November 2026
 
-[![make.fun](https://img.shields.io/badge/make.fun-news--image--20261121-blue)](https://make.fun/c/news-image-20261121)
-[![stories](https://img.shields.io/badge/stories-37-green)](https://make.fun/c/news-image-20261121)
-[![license](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
+[![make.fun](https://make.fun/badge/news-image-20261121.svg)](https://make.fun/competitions/news-image-20261121)
+[![rank](https://make.fun/badge/news-image-20261121/melatim80186/makefun-news-image-20261121-v4/rank.svg)](https://make.fun/competitions/news-image-20261121)
+[![reward](https://make.fun/badge/news-image-20261121/melatim80186/makefun-news-image-20261121-v4/reward.svg)](https://make.fun/competitions/news-image-20261121)
 
 A one-image summary of Saturday 21 November 2026's world news, built for the
 [make.fun contest "Sum up 21 November's world news in one image"](https://make.fun/c/news-image-20261121)
